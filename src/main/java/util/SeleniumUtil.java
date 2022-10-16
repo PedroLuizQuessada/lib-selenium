@@ -14,7 +14,7 @@ import java.time.Duration;
 import java.util.List;
 
 public class SeleniumUtil {
-    public void navegar(WebDriver webDriver, String url) throws UrlInvalidaException {
+    public static void navegar(WebDriver webDriver, String url) throws UrlInvalidaException {
         try {
             webDriver.navigate().to(url);
         }
@@ -23,7 +23,7 @@ public class SeleniumUtil {
         }
     }
 
-    public WebElement aguardarElementoVisivel(WebDriver webDriver,
+    public static WebElement aguardarElementoVisivel(WebDriver webDriver,
                                               int tempoMaximoEspera,
                                               By identificadorElemento) throws ElementoNaoEncontradoException {
         try {
@@ -35,7 +35,7 @@ public class SeleniumUtil {
         }
     }
 
-    public WebElement aguardarElementoClicavel(WebDriver webDriver,
+    public static WebElement aguardarElementoClicavel(WebDriver webDriver,
                                                int tempoMaximoEspera,
                                                By identificadorElemento) throws ElementoNaoEncontradoException {
         try {
@@ -47,7 +47,7 @@ public class SeleniumUtil {
         }
     }
 
-    public List<WebElement> aguardarElementosVisiveis(WebDriver webDriver,
+    public static List<WebElement> aguardarElementosVisiveis(WebDriver webDriver,
                                                       int tempoMaximoEspera,
                                                       By identificadorElemento) throws ElementoNaoEncontradoException {
         try {
@@ -59,7 +59,7 @@ public class SeleniumUtil {
         }
     }
 
-    public void moverParaElemento(WebDriver webDriver, int tempoMaximoEspera, By identificadorElemento) throws ElementoNaoEncontradoException {
+    public static void moverParaElemento(WebDriver webDriver, int tempoMaximoEspera, By identificadorElemento) throws ElementoNaoEncontradoException {
         Actions action = new Actions(webDriver);
 
         WebElement webElement = aguardarElementoVisivel(webDriver, tempoMaximoEspera, identificadorElemento);
